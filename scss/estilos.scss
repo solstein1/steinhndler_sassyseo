@@ -1,0 +1,45 @@
+$bgcaja1: rgb(255, 204, 213);
+$bgcaja2: rgb(193, 216, 139);
+$bgcaja3: rgb(212, 152, 214); 
+$amarillo: rgb(230, 219, 124);
+$text: rgb(20, 20, 20);
+
+@mixin cajas ($bgcaja){
+    background-color: $bgcaja;
+    border-radius: 50px;
+    padding: 5rem;
+    margin: 0.5rem;
+    
+    h2{
+        color:$text;
+    }
+    p{ 
+       @extend h2
+    }
+}
+
+body{
+    background-color: $amarillo;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+footer, header{
+    text-align: center;
+    padding-top: 5rem;
+    color: rgb(119, 51, 51);
+    height: 60px;
+}
+
+.productos{
+    @include cajas ($bgcaja1)
+}
+.servicios{
+    @include cajas ($bgcaja2)
+}
+
+.informacion{
+    @include cajas ($bgcaja3)
+}
+
+
+
